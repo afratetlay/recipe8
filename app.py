@@ -9,15 +9,15 @@ def index():
 
 @app.route('/task')
 def task():
-    return render_template("task.html")
+    return render_template("task.html", page_name="Task")
 
 @app.route('/recipes')
 def recipes():
-    return render_template("recipes.html")
+    return render_template("recipes.html", page_name="Recipes")
 
 @app.route('/contact')
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", page_name="Contact")
 
 @app.route('/chickenkorma')
 def chickenkorma():
