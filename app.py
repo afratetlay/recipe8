@@ -19,6 +19,10 @@ def recipes():
 def contact():
     return render_template("contact.html")
 
+@app.route('/chickenkorma')
+def chickenkorma():
+    return render_template("chickenkorma.html")
+
 
 
 if __name__ == '__main__':
