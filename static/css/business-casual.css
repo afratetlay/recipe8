@@ -332,3 +332,7 @@ p {
 .load {
     display: none;
 }
+
+.col-md-5 img {
+    width: 100%
+}
