@@ -334,5 +334,12 @@ p {
 }
 
 .col-md-5 img {
-    width: 100%
+    width: 100%;
 }
+
+.stars {
+      margin: 10px 30px;
+      li a i {
+         color: $star;
+      }
+   }
