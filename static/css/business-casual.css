@@ -343,3 +343,12 @@ p {
          color: $star;
       }
    }
+
+   .fa-clock-o {
+         color: $gray;
+         margin: 0 30px;
+      }
+      .fa-users {
+         color: $gray;
+      }
+   }

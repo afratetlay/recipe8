@@ -2,4 +2,23 @@
 {% block content %}
 <h4 class="site-heading-upper text-primary mb-3">کام</h4>
 <h2>{{ page_name }}</h2>
+
+<div class="row">
+    <form action="" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix"></i>
+          <input id="task" name ="task" type="text" class="validate">
+          <label for="icon_prefix"><i class="fas fa-utensils"></i>Recipe Name</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix"></i>
+          <input type="teatarea" name="recipe_description" id="recipe_description" class="materialize-textarea"/>
+          <label for="icon_telephone">Recipe Description</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
 {% endblock %}
