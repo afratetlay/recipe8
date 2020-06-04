@@ -356,3 +356,7 @@ p {
    .header {
        font-family: 'Roboto', sans-serif;
    }
+
+   .box {
+       background-color: grey;
+   }
