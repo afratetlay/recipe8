@@ -15,13 +15,14 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<!-- This is the Heading of the page -->
   <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3">حلال چکن کی ترکیبیں</span>
+    <span class="site-heading-upper text-primary mb-3"> چکن کی ترکیبیں</span>
     <span class="site-heading-lower">Chicken Recipes</span>
   </h1>
+<!-- End of the Heading -->
 
-  <!-- Navigation -->
+  <!-- This is the Navigation  -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
       <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
@@ -48,11 +49,7 @@
       </div>
     </div>
   </nav>
-
-
-<div style="background-image: url('static/img/background.jpg');">
-</div>
-
+<!-- End of Navigation -->
 
   <section class="page-section clearfix">
     <div class="container">
@@ -71,13 +68,27 @@
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+   
  
  <script>
   
    $(document).ready(function() {
     $('select').material_select();
   });
-     
+    
+     $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button,
+    container: undefined, // ex. 'body' will append picker to body
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
          
 
   </script>

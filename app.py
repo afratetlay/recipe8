@@ -23,6 +23,22 @@ def contact():
 def chickenkorma():
     return render_template("chickenkorma.html")
 
+@app.route('/garlicchicken')
+def garlicchicken():
+    return render_template("garlicchicken.html")
+
+@app.route('/creamychicken')
+def creamychicken():
+    return render_template("creamychicken.html")
+
+@app.route('/pastachicken')
+def pastachicken():
+    return render_template("pastachicken.html")
+
+@app.route('/chillichicken')
+def chillichicken():
+    return render_template("chillichicken.html")
+
 
 
 if __name__ == '__main__':

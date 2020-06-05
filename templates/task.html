@@ -2,7 +2,7 @@
 <h4 class="site-heading-upper text-primary mb-3">کام</h4>
 <h2>{{ page_name }}</h2>
 
-<div class="row">
+
   <form action="" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col s12">
@@ -25,6 +25,9 @@
         >
       </div>
     </div>
+     </form>
+     
+      <div class="col-md-2">
     <div class="row box">
       <label>Allegen </label>
       <select class="browser-default">
@@ -38,8 +41,50 @@
         <option value="3">N/A</option>
       </select>
     </div>
+    </div>
+
+
+
+<div class="container">
+  <form>
+    <div class="form-group row">
+      <div class="col-md-2">
+ <label>Allegen </label>
+      <select class="browser-default">
+        <option value="" selected>Choose Allegen</option>
+        <option value="1">Wheat</option>
+        <option value="2">Dairy</option>
+        <option value="3">Eggs</option>
+        <option value="4">Nuts</option>
+        <option value="5">Soy</option>
+        <option value="6">Fish/ Shellfish</option>
+        <option value="3">N/A</option>
+      </select> 
+      </div>
+    </div>
   </form>
 </div>
 
-<a href="https://icons8.com/icon/4014/chicken">Chicken icon by Icons8</a>
+<div class="form-group row">
+      <div class="col-md-2">
+        <label for="ex1">col-xs-2</label>
+        <input class="form-control" id="ex1" type="text">
+      </div>
+      </div>
+
+    
+
+    <div class="row">
+      <div class="input-field col s2">
+        <i class="material-icons prefix"></i>
+        <input id="due_time" name="due_time" type="text" class="timepicker"/>
+        <label for="icon_prefix">Time</label>
+      </div>
+    
+    
+
+
+
+
+
 {% endblock %}
