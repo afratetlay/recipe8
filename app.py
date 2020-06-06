@@ -39,6 +39,10 @@ def pastachicken():
 def chillichicken():
     return render_template("chillichicken.html")
 
+@app.route('/thaichicken')
+def thaichicken():
+    return render_template("thaichicken.html")
+
 
 
 if __name__ == '__main__':
