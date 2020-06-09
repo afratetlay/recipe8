@@ -1,85 +1,110 @@
 {% extends "base.html" %} {% block content %}
-<h4 class="site-heading-upper text-primary mb-3">کام</h4>
+<h4 class="site-heading-upper text-primary mb-3">اپنی ترکیب شامل کریں</h4>
 <h2>{{ page_name }}</h2>
 
-
-  <form action="" method="POST" class="col s12">
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix"></i>
-        <input id="task_name" name="task" type="text" class="validate" />
-        <label for="icon_prefix"
-          ><img src="https://img.icons8.com/officel/24/000000/chicken.png" />
-          Chicken Recipe Name</label
-        >
+<form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Image</span>
+        <input type="file">
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix"></i>
-        <input id="task_icon" name="task" type="text" class="validate" />
-        <label for="icon_prefix"
-          ><img
-            src="https://img.icons8.com/pastel-glyph/30/000000/create-new--v2.png"
-          />Recipe Description</label
-        >
-      </div>
-    </div>
-     </form>
-     
-      <div class="col-md-2">
-    <div class="row box">
-      <label>Allegen </label>
-      <select class="browser-default">
-        <option value="" selected>Choose Allegen</option>
-        <option value="1">Wheat</option>
-        <option value="2">Dairy</option>
-        <option value="3">Eggs</option>
-        <option value="4">Nuts</option>
-        <option value="5">Soy</option>
-        <option value="6">Fish/ Shellfish</option>
-        <option value="3">N/A</option>
-      </select>
-    </div>
-    </div>
-
-
-
-<div class="container">
-  <form>
-    <div class="form-group row">
-      <div class="col-md-2">
- <label>Allegen </label>
-      <select class="browser-default">
-        <option value="" selected>Choose Allegen</option>
-        <option value="1">Wheat</option>
-        <option value="2">Dairy</option>
-        <option value="3">Eggs</option>
-        <option value="4">Nuts</option>
-        <option value="5">Soy</option>
-        <option value="6">Fish/ Shellfish</option>
-        <option value="3">N/A</option>
-      </select> 
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
       </div>
     </div>
   </form>
-</div>
 
-<div class="form-group row">
-      <div class="col-md-2">
-        <label for="ex1">col-xs-2</label>
-        <input class="form-control" id="ex1" type="text">
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">create</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Recipe Name</label>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">comment</i>
+          <input type="text" id="autocomplete-description" class="autocomplete">
+          <label for="autocomplete-input">Recipe Description</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+        <div class="input-field col s12">
+         <i class="material-icons prefix">warning</i>
+          <input disabled value="454Kcal | Fat 30g | Saturates 15g | Sugars 9g | Salt 1.6g" id="disabled" type="text" class="validate">
+          <label for="disabled">Recipe Nutrition Example</label>
+        </div>
       </div>
 
+   <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_drink</i>
+          <input type="text" id="autocomplete-nutrition" class="autocomplete">
+          <label for="autocomplete-input">Recipe Nutrition</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="row">
+    <div id="matfix" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">alarm</i>
+           <input id="due_time" name="due_time" type="text" class="timepicker"/>
+          <label for="autocomplete-input">Time</label>
+        </div>
+      </div>
+    </div>
+  </div>
     
 
-    <div class="row">
-      <div class="input-field col s2">
-        <i class="material-icons prefix"></i>
-        <input id="due_time" name="due_time" type="text" class="timepicker"/>
-        <label for="icon_prefix">Time</label>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_dining</i>
+          <input type="text" id="autocomplete-ingredients" class="autocomplete">
+          <label for="autocomplete-input">Recipe Ingredients</label>
+        </div>
       </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">library_books</i>
+          <input type="text" id="autocomplete-method" class="autocomplete">
+          <label for="autocomplete-input">Recipe Method</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+
+
+
+
+    
     
     
 
