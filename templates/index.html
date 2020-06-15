@@ -36,11 +36,11 @@
   <div class="card-group vgr-cards">
     <div class="card">
       <div class="card-img-body">
-      <img class="card-img" src="https://realfood.tesco.com/media/images/KORMA-1400x919-7b02c527-02dd-4f57-aac0-fdbb1ea2e993-0-1400x919.jpg" alt="Card image cap">
+      <img class="card-img" src="{{ recipe.image_source }}" alt="Card image cap">
       </div>
       <div class="card-body">
-        <h4 class="card-title">Chicken Korma</h4>
-        <p class="card-text">A really rich and creamy chicken korma recipe with tender chicken breast pieces in a mildly spiced curry sauce. You could use chicken thigh fillets as an alternative if you prefer.</p>
+        <h4 class="card-title">{{ recipe.recipe_name}}</h4>
+        <p class="card-text">{{ recipe.recipe_description}}</p>
         <a href="{{ url_for('chickenkorma')}}" class="btn btn-outline-primary">Primary</a>
       </div>
     </div>
