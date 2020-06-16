@@ -32,15 +32,35 @@
         </div>
       </div>
 
+       <div class="row">
+       {% for recipe in recipes %}
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ recipes.image_source }}">
+              <span class="card-title">{{ recipes.recipe_name}}</span>
+            </div>
+            <div class="card-content">
+              <p>{{ recipes.recipe_description}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+            
+
 <div class="container">
   <div class="card-group vgr-cards">
     <div class="card">
       <div class="card-img-body">
-      <img class="card-img" src="{{ recipe.image_source }}" alt="Card image cap">
+      <img class="card-img" src="{{ recipes.image_source }}" alt="Card image cap">
       </div>
       <div class="card-body">
-        <h4 class="card-title">{{ recipe.recipe_name}}</h4>
-        <p class="card-text">{{ recipe.recipe_description}}</p>
+        <h4 class="card-title">{{ recipes.recipe_name}}</h4>
+        <p class="card-text">{{ recipes.recipe_description}}</p>
         <a href="{{ url_for('chickenkorma')}}" class="btn btn-outline-primary">Primary</a>
       </div>
     </div>
