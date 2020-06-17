@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 
-#This creates a link to MongoDB
+# This creates a link to MongoDB
 app.config["MONGO_DBNAME"] = 'recipes'
 app.config["MONGO_URI"] = 'mongodb+srv://recipe8:Hellothere@myfirstcluster-ji6z9.mongodb.net/recipes?retryWrites=true&w=majority'
 
@@ -17,9 +17,18 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
-@app.route('/task')
+@app.route('/task', methods=['POST'])
 def task():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.gform.to_dict())
+    return redirect(url_for('recipes'))
     return render_template("task.html", page_name="Task")
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('edittask.html', task=the_task, categories=all_categories)
 
 @app.route('/recipes')
 def recipes():
