@@ -19,13 +19,6 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
-""" User Login Form """
-@app.route('/login', methods['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        users =mongo.db.users
-        login_user = users.find_one({'name' : request.form['username']})
-
 @app.route('/task', methods=['POST'])
 def task():
     recipes = mongo.db.recipes
@@ -36,8 +29,8 @@ def task():
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
-    return render_template('edittask.html', task=the_task, categories=all_categories)
+    recipes = mongo.db.recipes.find()
+    return render_template('recipes.html', recipes=the_recipe,)
 
 @app.route('/recipes')
 def recipes():
