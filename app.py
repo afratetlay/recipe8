@@ -7,15 +7,24 @@ app = Flask(__name__)
 
 
 
-# This creates a link to MongoDB
+"""This creates a link to MongoDB"""
+
 app.config["MONGO_DBNAME"] = 'recipes'
 app.config["MONGO_URI"] = 'mongodb+srv://recipe8:Hellothere@myfirstcluster-ji6z9.mongodb.net/recipes?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
+""" This is for the index page """
 @app.route('/')
 def index():
     return render_template("index.html")
+
+""" User Login Form """
+@app.route('/login', methods['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        users =mongo.db.users
+        login_user = users.find_one({'name' : request.form['username']})
 
 @app.route('/task', methods=['POST'])
 def task():
