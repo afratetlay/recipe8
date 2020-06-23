@@ -33,7 +33,6 @@ def task():
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find()
     return render_template('recipes.html', recipes=the_recipes,)
 
 @app.route('/update_task/<task_id>', methods=['POST'])
@@ -48,12 +47,22 @@ def update_task(task_id):
         'recipe_cook': request.form.get('recipe_cook'),
         'recipe_method': request.form.get('recipe_method') 
     }
-    return redirect(url_for('recipes_tasks'))
+    return redirect(url_for('recipes'))
 
 @app.route('/delete_recipe/<recipe_id>')
-def recipe_task(recipe_id):
+def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('recipes_task'))
+    return redirect(url_for('recipes'))
+
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes
+    recipe.find_one_and_update(
+        {'_id': ObjectId(recipe_id)},
+        {'$inc': {'views': 1}}
+    )
+    recipe_db = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template("viewrecipe.html", recipe=recipe_db)
 
 
 
