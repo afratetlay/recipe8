@@ -19,6 +19,10 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
+@app.route('/recipes')
+def recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+
 @app.route('/task', methods=['POST'])
 def task():
     recipes = mongo.db.recipes
@@ -48,52 +52,9 @@ def update_task(task_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def recipe_task(recipe_id):
-    return redirect(url_for('recipes_task'))
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('recipes_task'))
 
-
-
-
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html", page_name="Recipes")
-    
-@app.route('/chickenkorma')
-def chickenkorma():
-    return render_template("chickenkorma.html", page_name="chickenkorma")
-
-
-@app.route('/chillichicken')
-def chillichicken():
-    return render_template("chillichicken.html", page_name="chillichicken")
-
-@app.route('/creamychicken')
-def creamychicken():
-    return render_template("creamychicken.html", page_name="creamychicken")
-
-@app.route('/garlicchicken')
-def garlicchicken():
-    return render_template("garlicchicken.html", page_name="garlicchicken")
-
-@app.route('/pastachicken')
-def pastachicken():
-    return render_template("pastachicken.html", page_name="pastachicken")
-
-@app.route('/thaichicken')
-def thaichicken():
-    return render_template("thaichicken.html", page_name="thaichicken")
-
-
-
-
-
-    
-    
-
-
-@app.route('/contact')
-def contact():
-    return render_template("contact.html", page_name="Contact")
 
 
 if __name__ == '__main__':
