@@ -1,103 +1,62 @@
 {% extends "base.html" %} {% block content %}
-<h4 class="site-heading-upper text-primary mb-3">اپنی ترکیب شامل کریں</h4>
-<h2>{{ page_name }}</h2>
+<center>
+  <h2>{{recipe.recipe_name }}</h2>
+</center>
 
-<form action="#" method="POST">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>Image</span>
-        <input type="file">
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-
+<div class="container">
   <div class="row">
-    <div class="col s12">
+    <div class="col-md-5">
+     {{ recipe.image_source }}
+    </div>
+    <div class="col-md-7">
+      <h5>{{recipe.recipe_name }}</h5>
       <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">create</i>
-          <input type="recipe_name" id="recipe_name" class="autocomplete">
-          <label for="autocomplete-input">Recipe Name</label>
-        </div>
+        <img
+          src="https://img.icons8.com/color/30/000000/circled-user-female-skin-type-4.png"
+        />
+        <b>Serves {{ recipe.serves}}</b>
+      </div>
+      <div class="row">
+        <img src="https://img.icons8.com/plasticine/30/000000/time.png" />
+        <b>{{ recipe.time}}</b>
+      </div>
+      <div class="row">
+        <img
+          src="https://img.icons8.com/office/30/000000/caloric-energy.png"
+        /><b>{{ recipe.calories}}</b>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
   <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">comment</i>
-          <input type="recipe_description" id="recipe_description" class="autocomplete">
-          <label for="autocomplete-input">Recipe Description</label>
-        </div>
-      </div>
+    <div class="col-md-12">
+      <a href="#!" class="btn waves-effect waves-orange"> Fat {{ recipe.fat}}</a>
+      <a href="#!" class="btn waves-effect waves-orange"> Saturates {{ recipe.saturates}}</a>
+      <a href="#!" class="btn waves-effect waves-orange"> Sugars {{ recipe.sugars}}</a>
+      <a href="#!" class="btn waves-effect waves-orange"> Salt {{ recipe.salt}}</a>
+      <h6 class="header"><b>Recipe Description</b></h6>
+      <p>
+        {{ recipe.recipe_description}}
+      </p>
+      <h6><b>Ingredients</b></h6>
+      {% for instruction in recipe.ingredients %}
+      <p>{{ instruction }}</p>
+      {% endfor %}
     </div>
   </div>
-
+</div>
+<div class="container">
   <div class="row">
-        <div class="input-field col s12">
-         <i class="material-icons prefix">warning</i>
-          <input disabled value="454Kcal | Fat 30g | Saturates 15g | Sugars 9g | Salt 1.6g" id="disabled" type="text" class="validate">
-          <label for="disabled">Recipe Nutrition Example</label>
-        </div>
-      </div>
-
-   <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">local_drink</i>
-          <input type="nutrition" id="nutrition" class="autocomplete">
-          <label for="autocomplete-input">Recipe Nutrition</label>
-        </div>
-      </div>
+    <div class="col-md-12">
+      <h6><b>Method</b></h6>
+     {% for instruction in recipe.recipe_method  %}
+     <p>{{ instruction }}</p>
+   {% endfor %}
     </div>
   </div>
+</div>
 
- <div class="row">
-    <div id="matfix" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">alarm</i>
-           <input id="due_time" name="due_time" type="text" class="timepicker"/>
-          <label for="autocomplete-input">Time</label>
-        </div>
-      </div>
-    </div>
-  </div>
-    
-
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">local_dining</i>
-          <input type="ingredients" id="ingredients" class="autocomplete">
-          <label for="autocomplete-input">Recipe Ingredients</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">library_books</i>
-          <input type="recipe_method" id="recipe_method" class="autocomplete">
-          <label for="autocomplete-input">Recipe Method</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-</form>
 {% endblock %}
+

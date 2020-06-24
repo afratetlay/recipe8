@@ -1,10 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <h4 class="site-heading-upper text-primary mb-3">نسخہ</h4>
 <h2>{{ page_name }}</h2>
-    <div class="box-buttons">
-        <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="waves-effect waves-light btn btn-1">Edit</a>
-        <a href="{{ url_for('delete_recipe', recipe_id=recipes._id) }}" class="waves-effect waves-light btn">Delete</a>
-    </div>
+   
        <div class="row">
        {% for recipes in recipes %}
         <div class="col-md-5">
