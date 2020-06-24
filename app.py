@@ -23,11 +23,11 @@ def index():
 def recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
-@app.route('/task', methods=['POST'])
+@app.route('/task', methods=['GET'])
 def task():
-    recipes = mongo.db.recipes
-    recipes.insert_one(request.gform.to_dict())
-    return redirect(url_for('recipes'))
+    """recipes = mongo.db.recipes"""
+    """recipes.insert_one(request.form.to_dict())"""
+    """return redirect(url_for('recipes'))"""
     return render_template("task.html", page_name="Task")
 
 @app.route('/edit_recipe/<recipe_id>')
@@ -40,12 +40,12 @@ def update_task(task_id):
     recipes = mongo.db.recipes
     {
         'recipe_name': request.form.get('recipe_name'),
-        'recipe_description':request.form.get('recipe_description'),
+        'recipe_description': request.form.get('recipe_description'),
         'nutrition': request.form.get('nutrition'),
         'ingredients': request.form.get('ingredients'),
         'recipe_preparation': request.form.get('recipe_preparation'),
         'recipe_cook': request.form.get('recipe_cook'),
-        'recipe_method': request.form.get('recipe_method') 
+        'recipe_method': request.form.get('recipe_method')
     }
     return redirect(url_for('recipes'))
 
