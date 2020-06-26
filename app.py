@@ -19,19 +19,25 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
-
 @app.route('/task', methods=['GET'])
 def task():
     """recipes = mongo.db.recipes"""
     """recipes.insert_one(request.form.to_dict())"""
     """return redirect(url_for('recipes'))"""
-    return render_template("task.html", page_name="Task",
-    name = mongo.db.name.find(name))
+    return render_template("task.html", name=mongo.db.recipes.find())
 
 @app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('task'))
+
+
+@app.route('/recipes')
+def recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipes.find(), name = mongo.db.name.find(name))
+
+"""@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = request.form.to_dict()
     # for loop with if statement prevents user from submitting a blank form with only space characters
@@ -43,7 +49,7 @@ def insert_recipe():
             return render_template('error_adminaddrecipe.html', types=mongo.db.recipes.find())
     recipes = mongo.db.recipes.insert(recipes)
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
-    return redirect(url_for('recipes', recipe_id=recipes))
+    return redirect(url_for('recipes', recipe_id=recipes))"""
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
