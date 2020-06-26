@@ -22,15 +22,19 @@
   <form>
     <div class="row">
       <i class="material-icons prefix">local_dining</i>
-       {% for cat in name %}
-       {{cat }}
-       {% endfor %}
       <div class="input-field col-md-4">
         <select multiple id="recipe" name="recipe_number">
           <option value="" disabled selected>Choose your option</option>
-          {% for cat in name %}
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <!-- {% for cat in name %}
           <option value="{{cat.recipe_number}}">{{cat.recipe_number}}</option>
-          {% endfor %}
+          {% endfor %} -->
         </select>
         <label>Serves</label>
       </div>
@@ -309,10 +313,10 @@
     <label for="first_name">Recipe Method</label>
   </div>
 <div class="row">
-  <button class="btn waves-effect waves-light" type="submit" name="action">
+  <a href class="btn waves-effect waves-light" type="submit" name="action">
     Submit
     <i class="material-icons right">send</i>
-  </button>
+  </a>
   </div>
 </form>
 {% endblock %}

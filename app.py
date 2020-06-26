@@ -24,13 +24,13 @@ def task():
     """recipes = mongo.db.recipes"""
     """recipes.insert_one(request.form.to_dict())"""
     """return redirect(url_for('recipes'))"""
-    return render_template("task.html", name=mongo.db.name.find())
+    return render_template("task.html", name=mongo.db.recipes.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('task'))
+    return redirect(url_for('recipes.html'))
 
 
 @app.route('/recipes')
