@@ -2,7 +2,7 @@
 <h4 class="site-heading-upper text-primary mb-3">اپنی ترکیب شامل کریں</h4>
 <h2>{{ page_name }}</h2>
 
-<form action="#" method="POST">
+<form action="{{ url_for('insert_recipe') }}" method="POST">
   <div class="file-field input-field col-md-12">
     <div class="btn">
       <span>Image</span>
@@ -22,6 +22,9 @@
   <form>
     <div class="row">
       <i class="material-icons prefix">local_dining</i>
+       {% for cat in name %}
+       {{cat }}
+       {% endfor %}
       <div class="input-field col-md-4">
         <select multiple id="recipe" name="recipe_number">
           <option value="" disabled selected>Choose your option</option>

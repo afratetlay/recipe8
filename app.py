@@ -24,7 +24,7 @@ def task():
     """recipes = mongo.db.recipes"""
     """recipes.insert_one(request.form.to_dict())"""
     """return redirect(url_for('recipes'))"""
-    return render_template("task.html", name=mongo.db.recipes.find())
+    return render_template("task.html", name=mongo.db.name.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -35,7 +35,7 @@ def insert_recipe():
 
 @app.route('/recipes')
 def recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find(), name = mongo.db.name.find(name))
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 """@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
