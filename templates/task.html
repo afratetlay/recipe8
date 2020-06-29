@@ -19,7 +19,7 @@
     <label for="first_name">Recipe Name</label>
   </div>
 
-  <form>
+  
     <div class="row">
       <i class="material-icons prefix">local_dining</i>
       <div class="input-field col-md-4">
@@ -67,9 +67,9 @@
         <label for="first_name">Calories</label>
       </div>
     </div>
-  </form>
+  
 
-  <form>
+  
     <div class="row">
       <div class="input-field col-md-3">
         <i class="material-icons prefix">opacity</i>
@@ -112,7 +112,7 @@
         <label for="first_name">Salt</label>
       </div>
     </div>
-  </form>
+  
 
   <div class="row">
     <div class="input-field col-md-12">
@@ -122,201 +122,54 @@
     </div>
   </div>
 
-  <form>
+  
     <div class="row">
-      <div class="input-field col-md-3">
+      <div class="input-field col-md-12">
         <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
+        <input type="text" name="ingredients" class="ingredients" placeholder="One ingredient per box!" required/>
         <label for="first_name">Ingredients</label>
       </div>
     </div>
-  </form>
+  
 
-  <form>
-    <div class="row">
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input placeholder="" id="ingredient" type="text" class="validate" />
-        <label for="first_name">Ingredients</label>
-      </div>
+  <div class="row">
+        <div class="col text-center button-container">
+                <button class="btn btn-secondary i-add" type="button">+</button>
+                <button class="btn btn-secondary i-remove" type="button">-</button>
+        </div>
     </div>
-  </form>
 
-  <form>
-    <div class="row">
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-    </div>
-  </form>
 
-  <form>
-    <div class="row">
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-      <div class="input-field col-md-3">
-        <i class="material-icons prefix">local_dining</i>
-        <input
-          placeholder="For Example 0.8g"
-          id="ingredient"
-          type="text"
-          class="validate"
-        />
-        <label for="first_name">Ingredients</label>
-      </div>
-    </div>
-  </form>
+<div class="row spacing">
+            <div class="col">
+                <div class="card container add-container text-center d-flex justify-content-center">
+                    <h4>Method</h4>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col">
+                            <p>
+                                <input type="text" name="methods" class="methods" placeholder="Boil water and drop in spaghetti, add balsamic vinegar to bring out a nice tangy flavour..." required /></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center button-container">
+                            <button class="btn btn-secondary m-add" type="button">+</button>
+                            <button class="btn btn-secondary m-remove" type="button">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
   <div class="input-field col-md-12">
     <i class="material-icons prefix">library_books</i>
     <input placeholder="" id="recipe_method" type="text" class="validate" />
     <label for="first_name">Recipe Method</label>
   </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-    <input placeholder="" id="recipe_method" type="text" class="validate" />
-    <label for="first_name">Recipe Method</label>
-  </div>
+ 
 <div class="row">
-  <a href class="btn waves-effect waves-light" type="submit" name="action">
+  <button class="btn waves-effect waves-light" type="submit" name="action">
     Submit
-    <i class="material-icons right">send</i>
-  </a>
+    </button>
   </div>
 </form>
 {% endblock %}

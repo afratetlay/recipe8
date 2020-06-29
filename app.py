@@ -30,26 +30,12 @@ def task():
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('recipes.html'))
+    return redirect(url_for('recipes'))
 
 
 @app.route('/recipes')
 def recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
-
-"""@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
-    recipes = request.form.to_dict()
-    # for loop with if statement prevents user from submitting a blank form with only space characters
-    for field in recipes:
-        if recipes[field].isspace() == True:
-            return render_template('error_addrecipe.html', types=mongo.db.recipes.find())
-    for recipe_by in recipes:
-        if recipes[recipe_by].lower() == "admin":
-            return render_template('error_adminaddrecipe.html', types=mongo.db.recipes.find())
-    recipes = mongo.db.recipes.insert(recipes)
-    #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
-    return redirect(url_for('recipes', recipe_id=recipes))"""
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
