@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 <center>
-  <h2>{{recipe.recipe_name }}</h2>
+  <h2></h2>
 </center>
 
 <div class="container">
@@ -9,7 +9,7 @@
      {{ recipe.image_source }}
     </div>
     <div class="col-md-7">
-      <h5>{{recipe.recipe_name }}</h5>
+      <h5></h5>
       <div class="row">
         <img
           src="https://img.icons8.com/color/30/000000/circled-user-female-skin-type-4.png"
@@ -64,7 +64,7 @@
       <i class="large material-icons">mode_edit</i>
     </a>
     <ul>
-      <li><a class="btn-floating green"><i class="material-icons">mode_edit</i></a></li>
+      <li><a href="{{url_for('edittask', recipes_id=recipe._id)}}" class="btn-floating green"><i class="material-icons">mode_edit</i></a></li>
       <li><a class="btn-floating blue"><i class="material-icons">delete</i></a></li>
     </ul>
   </div>

@@ -1,62 +1,157 @@
 {% extends "base.html" %} {% block content %}
-<center>
-  <h2>{{recipe.recipe_name }}</h2>
-</center>
+<h4 class="site-heading-upper text-primary mb-3">اپنی ترکیب شامل کریں</h4>
+<h2>Edit task</h2>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-5">
-     {{ recipe.image_source }}
+<form action="{{ url_for('insert_recipe') }}" method="POST">
+  <div class="file-field input-field col-md-12">
+    <div class="btn">
+      <span>Image</span>
+      <input type="file" />
     </div>
-    <div class="col-md-7">
-      <h5>{{recipe.recipe_name }}</h5>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" />
+    </div>
+  </div>
+
+  <div class="input-field col-md-12">
+    <i class="material-icons prefix">create</i>
+    <input placeholder="" id="recipe_method" type="text" class="validate" value="{{recipes.recipe_name}}"/>
+    <label for="first_name">Recipe Name</label>
+  </div>
+
+  
+    <div class="row">
+      <i class="material-icons prefix">local_dining</i>
+      <div class="input-field col-md-4">
+        <select multiple id="recipe" name="recipe_number" value="{{recipes.serves}}" >
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <!-- {% for cat in name %}
+          <option value="{{cat.recipe_number}}">{{cat.recipe_number}}</option>
+          {% endfor %} -->
+        </select>
+        <label>Serves</label>
+      </div>
+
       <div class="row">
-        <img
-          src="https://img.icons8.com/color/30/000000/circled-user-female-skin-type-4.png"
+        <div id="matfix" class="col 4">
+          <div class="row">
+            <div class="input-field col-md-4">
+              <i class="material-icons prefix">alarm</i>
+              <input
+                id="due_time"
+                name="due_time"
+                type="text"
+                class="timepicker"
+              />
+              <label for="autocomplete-input">Time</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field col-md-4">
+        <i class="material-icons prefix">add</i>
+        <input
+          placeholder="How many Calories" id="calories" type="text" class="validate" value="{{recipes.calories}}"/>
+        <label for="first_name">Calories</label>
+      </div>
+    </div>
+  
+
+  
+    <div class="row">
+      <div class="input-field col-md-3">
+        <i class="material-icons prefix">opacity</i>
+        <input
+          placeholder="For Example - 30g"
+          id="fat"
+          type="text"
+          class="validate"
+          value="{{recipes.fat}}"
         />
-        <b>Serves {{ recipe.serves}}</b>
+        <label for="first_name">Fat</label>
       </div>
-      <div class="row">
-        <img src="https://img.icons8.com/plasticine/30/000000/time.png" />
-        <b>{{ recipe.time}}</b>
+      <div class="input-field col-md-3">
+        <i class="material-icons prefix">invert_colors</i>
+        <input
+          placeholder="For Example - 2g"
+          id="saturates"
+          type="text"
+          class="validate"
+          value="{{recipes.saturates}}"
+        />
+        <label for="first_name">Saturates</label>
       </div>
-      <div class="row">
-        <img
-          src="https://img.icons8.com/office/30/000000/caloric-energy.png"
-        /><b>{{ recipe.calories}}</b>
+      <div class="input-field col-md-3">
+        <i class="material-icons prefix">border_clear</i>
+        <input
+          placeholder="For Example - 1g"
+          id="sugar"
+          type="text"
+          class="validate"
+          value="{{recipes.sugars}}"
+        />
+        <label for="first_name">Sugar</label>
+      </div>
+      <div class="input-field col-md-3">
+        <i class="material-icons prefix">grain</i>
+        <input
+          placeholder="For Example 0.8g"
+          id="salt"
+          type="text"
+          class="validate"
+          value="{{recipes.salt}}"
+        />
+        <label for="first_name">Salt</label>
       </div>
     </div>
-  </div>
-</div>
+  
 
-<div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <a href="#!" class="btn waves-effect waves-orange"> Fat {{ recipe.fat}}</a>
-      <a href="#!" class="btn waves-effect waves-orange"> Saturates {{ recipe.saturates}}</a>
-      <a href="#!" class="btn waves-effect waves-orange"> Sugars {{ recipe.sugars}}</a>
-      <a href="#!" class="btn waves-effect waves-orange"> Salt {{ recipe.salt}}</a>
-      <h6 class="header"><b>Recipe Description</b></h6>
-      <p>
-        {{ recipe.recipe_description}}
-      </p>
-      <h6><b>Ingredients</b></h6>
-      {% for instruction in recipe.ingredients %}
-      <p>{{ instruction }}</p>
-      {% endfor %}
+    <div class="input-field col-md-12">
+      <i class="material-icons prefix">comment</i>
+      <input id="first_name2" type="text" class="validate" value="{{recipes.recipe_description}}"/>
+      <label class="active" for="first_name2">Recipe Description</label>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h6><b>Method</b></h6>
-     {% for instruction in recipe.recipe_method  %}
-     <p>{{ instruction }}</p>
-   {% endfor %}
-    </div>
-  </div>
-</div>
 
+  
+    <div class="row">
+      <div class="input-field col-md-12">
+        <i class="material-icons prefix">local_dining</i>
+        {% for i in recipes.ingredients %}
+        <input type="text" name="ingredients" class="ingredients" value="{{ i }}" required/> {% endfor %}
+        <label for="first_name">Ingredients</label>
+      </div>
+    </div>
+  
+
+  <div class="row">
+        <div class="col text-center button-container">
+                <button class="btn btn-secondary i-add" type="button">+</button>
+                <button class="btn btn-secondary i-remove" type="button">-</button>
+        </div>
+    </div>
+
+
+  <div class="input-field col-md-12">
+    <i class="material-icons prefix">library_books</i>
+   {% for m in recipes.recipe_method %}
+    <input type="text" name="methods" class="methods" value=" {{ m }} " required/> {% endfor %}
+    <label for="first_name">Recipe Method</label>
+  </div>
+ 
+<div class="row">
+  <button class="btn waves-effect waves-light" type="submit" name="action">
+    Submit
+    </button>
+  </div>
+</form>
 {% endblock %}
-
