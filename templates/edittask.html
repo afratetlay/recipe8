@@ -39,7 +39,7 @@
         <label>Serves</label>
       </div>
 
-      <div class="row">
+      
         <div id="matfix" class="col 4">
           <div class="row">
             <div class="input-field col-md-4">
@@ -50,11 +50,11 @@
                 type="text"
                 class="timepicker"
               />
-              <label for="autocomplete-input">Time</label>
+              <label for="autocomplete-input"></label>
             </div>
           </div>
         </div>
-      </div>
+     
 
       <div class="input-field col-md-4">
         <i class="material-icons prefix">add</i>
@@ -154,4 +154,14 @@
     </button>
   </div>
 </form>
+
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+due_time = Time.parse('{{recipes.due_time}}');
+$('#due_time').pickatime('picker').set('select', due_time, { format: 'HH:mm'}).trigger('change')
+});
+
+</script>
 {% endblock %}
