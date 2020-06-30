@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 <h4 class="site-heading-upper text-primary mb-3">اپنی ترکیب شامل کریں</h4>
-<h2>{{ page_name }}</h2>
+<h2>Add Your Recipes</h2>
 
 <form action="{{ url_for('insert_recipe') }}" method="POST">
   <div class="file-field input-field col-md-12">
@@ -21,22 +21,16 @@
 
   
     <div class="row">
-      <i class="material-icons prefix">local_dining</i>
+   
       <div class="input-field col-md-4">
-        <select multiple id="recipe" name="recipe_number">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <!-- {% for cat in name %}
-          <option value="{{cat.recipe_number}}">{{cat.recipe_number}}</option>
-          {% endfor %} -->
-        </select>
-        <label>Serves</label>
+        <i class="material-icons prefix">local_dining</i>
+        <input
+          placeholder=""
+          id="calories"
+          type="text"
+          class="validate"
+        />
+        <label for="first_name">Serves</label>
       </div>
 
       

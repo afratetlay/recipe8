@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %}
 <center>
-  <h2></h2>
+  <h2>{{ recipe.recipe_name }}</h2>
 </center>
 
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-     {{ recipe.image_source }}
+     <img src="{{ recipe.image_source }}">
     </div>
     <div class="col-md-7">
       <h5></h5>
@@ -65,10 +65,12 @@
     </a>
     <ul>
       <li><a href="{{url_for('edittask', recipes_id=recipe._id)}}" class="btn-floating green"><i class="material-icons">mode_edit</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">delete</i></a></li>
+      <li><a href="{{url_for('delete_recipe', recipes_id=recipe._id)}}" class="btn-floating blue"><i class="material-icons">delete</i></a></li>
     </ul>
   </div>
   </div>
+
+
 
 {% endblock %}
 
