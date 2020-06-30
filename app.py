@@ -45,6 +45,8 @@ def edittask(recipes_id):
 @app.route('/update_recipe/<recipes_id>', methods=['POST'])
 def update_recipe(recipes_id):
     recipes = mongo.db.recipes
+    print (request.form)
+    print(request.form.get('recipe_name'))
     recipes.update( {'_id': ObjectId(recipes_id)},
     {
         'image_source': request.form.get('image_source'),
