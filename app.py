@@ -42,16 +42,22 @@ def edittask(recipes_id):
     the_recipes = mongo.db.recipes.find_one({"_id":ObjectId(recipes_id)})
     return render_template('edittask.html', recipes=the_recipes)
 
-@app.route('/update_task/<task_id>', methods=['POST'])
-def update_task(task_id):
+@app.route('/update_task/<recipes_id>', methods=['POST'])
+def update_task(recipes_id):
     recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipes_id)}),
     {
+        'image_source': request.form.get('image_source'),
         'recipe_name': request.form.get('recipe_name'),
+        'serves': request.form.get('serves'),
+        'time': request.form.get('time'),
+        'calories': request.form.get('calories'),
+        'fat': request.form.get('fat'),
+        'saturates': request.form.get('saturates'),
+        'sugars': request.form.get('sugars'),
+        'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
-        'nutrition': request.form.get('nutrition'),
         'ingredients': request.form.get('ingredients'),
-        'recipe_preparation': request.form.get('recipe_preparation'),
-        'recipe_cook': request.form.get('recipe_cook'),
         'recipe_method': request.form.get('recipe_method')
     }
     return redirect(url_for('recipes'))
