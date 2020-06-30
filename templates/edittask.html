@@ -9,13 +9,13 @@
       <input type="file" />
     </div>
     <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" />
+      <input name="image_source" class="file-path validate" type="text" />
     </div>
   </div>
 
   <div class="input-field col-md-12">
     <i class="material-icons prefix">create</i>
-    <input placeholder="" id="recipe_name" type="text" class="validate" value="{{recipes.recipe_name}}"/>
+    <input placeholder="" name="recipe_name" type="text" class="validate" value="{{recipes.recipe_name}}"/>
     <label for="first_name">Recipe Name</label>
   </div>
 
@@ -25,7 +25,7 @@
         <i class="material-icons prefix">local_dining</i>
         <input
           placeholder=""
-          id="calories"
+          name="serves"
           type="text"
           class="validate"
           value="{{recipes.serves}}"
@@ -39,7 +39,7 @@
             <div class="input-field col-md-4">
               <i class="material-icons prefix">alarm</i>
               <input
-                id="due_time"
+                name="due_time"
                 name="due_time"
                 type="text"
                 class="timepicker"
@@ -53,7 +53,7 @@
       <div class="input-field col-md-4">
         <i class="material-icons prefix">add</i>
         <input
-          placeholder="How many Calories" id="calories" type="text" class="validate" value="{{recipes.calories}}"/>
+          placeholder="How many Calories" name="calories" type="text" class="validate" value="{{recipes.calories}}"/>
         <label for="first_name">Calories</label>
       </div>
     </div>
@@ -65,7 +65,7 @@
         <i class="material-icons prefix">opacity</i>
         <input
           placeholder="For Example - 30g"
-          id="fat"
+          name="fat"
           type="text"
           class="validate"
           value="{{recipes.fat}}"
@@ -76,7 +76,7 @@
         <i class="material-icons prefix">invert_colors</i>
         <input
           placeholder="For Example - 2g"
-          id="saturates"
+          name="saturates"
           type="text"
           class="validate"
           value="{{recipes.saturates}}"
@@ -87,7 +87,7 @@
         <i class="material-icons prefix">border_clear</i>
         <input
           placeholder="For Example - 1g"
-          id="sugar"
+          name="sugar"
           type="text"
           class="validate"
           value="{{recipes.sugars}}"
@@ -98,7 +98,7 @@
         <i class="material-icons prefix">grain</i>
         <input
           placeholder="For Example 0.8g"
-          id="salt"
+          name="salt"
           type="text"
           class="validate"
           value="{{recipes.salt}}"
@@ -111,46 +111,31 @@
   <div class="row">
     <div class="input-field col-md-12">
       <i class="material-icons prefix">comment</i>
-      <input id="first_name2" type="text" class="validate" value="{{recipes.recipe_description}}"/>
+      <input name="recipe_description" type="text" class="validate" value="{{recipes.recipe_description}}"/>
       <label class="active" for="first_name2">Recipe Description</label>
     </div>
   </div>
-               <!--custom forms serving arrays of ingredients/methods for each recipe -->
+         
         
-            <div class="input-field col-md-12">
-                <div class="card container add-container text-center d-flex justify-content-center">
-                    <h4>Ingredients</h4>
-                    <div class="row d-flex justify-content-center">
-                        {% for i in recipes.ingredients %}
-                        <input type="text" name="ingredients" class="ingredients" value="{{ i }}" required/> {% endfor %}
-                    </div>
-                    <div class="row">
-                        <div class="col text-center button-container">
-                            <button class="btn btn-secondary i-add" type="button">+</button>
-                            <button class="btn btn-secondary i-remove" type="button">-</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-       
-            <div class="input-field col-md-12">
-                <div class="card container add-container text-center d-flex justify-content-center">
-                    <h4>Method</h4>
-                    <div class="row">
-                        <div class="input-field col-md-12">
-                            {% for m in recipes.recipe_method %}
-                            <input type="text" name="methods" class="methods" value=" {{ m }} " required/> {% endfor %}
-                        </div>
-                        <div class="row">
-                            <div class="col text-center button-container">
-                                <button class="btn btn-secondary m-add" type="button">+</button>
-                                <button class="btn btn-secondary m-remove" type="button">-</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
+      <div class="row">
+        <div class="input-field col-md-12">
+          <i class="material-icons prefix">local_dining</i>
+          <textarea name="ingredients" class="materialize-textarea" value="{{recipes.ingredients}}" placeholder="Put a space after each ingredient"></textarea>
+          <label for="icon_prefix2">Ingredients</label>
+        </div>
+      </div>
+
+
+  
+      <div class="row">
+        <div class="input-field col-md-12">
+          <i class="material-icons prefix">library_books</i>
+          <input type="text" name="recipe_method" class="methods" value=" {{ m }} " placeholder="Put a space after each method" required/>
+          <textarea name="recipe_method" class="materialize-textarea" value="{{recipes.recipe_method}}" ></textarea>
+          <label for="icon_prefix2">Recipe Method</label>
+        </div>
+      </div>
      
 
       <!---<div class="row">
