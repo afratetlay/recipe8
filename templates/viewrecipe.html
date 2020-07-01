@@ -32,7 +32,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <a href="#!" class="btn waves-effect waves-orange"> Fat {{ recipe.fat}}</a>
+      <a class="btn waves-effect waves-orange"> Fat {{ recipe.fat}}</a>
       <a href="#!" class="btn waves-effect waves-orange"> Saturates {{ recipe.saturates}}</a>
       <a href="#!" class="btn waves-effect waves-orange"> Sugars {{ recipe.sugars}}</a>
       <a href="#!" class="btn waves-effect waves-orange"> Salt {{ recipe.salt}}</a>
@@ -56,6 +56,9 @@
    {% endfor %}
     </div>
   </div>
+</div>
+<div class="row">
+<h5>Views {{recipe.views}}</h5>
 </div>
 
 <div class="row">

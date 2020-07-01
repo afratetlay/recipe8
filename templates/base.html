@@ -66,6 +66,7 @@
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   
 
    
  
@@ -123,12 +124,12 @@ if (methodOnRecipe.length > 0) {
 
 }
 else {
-    let methodCount = $(".methods").length
+    let methodCount = $(".recipe_method").length
 
     /* Add new line */
     $(".m-add").click(function() {
         /* append form, insert before add/remove btns and clear existing values */
-        $(".methods:last").append("<input type='text' name='methods' class='methods' required placeholder='Boil water and drop in spaghetti, add balsamic vinegar to bring out a nice tangy flavour...'/>")
+        $(".recipe_method:last").append("<input type='text' name='recipe_method' class='recipe_method' required placeholder='Boil water and drop in spaghetti, add balsamic vinegar to bring out a nice tangy flavour...'/>")
             .insertBefore(".m-add")
             .find("input[type='text']").val("");
         methodCount += 1;
@@ -137,7 +138,7 @@ else {
     /* Remove last line */
     $(".m-remove").click(function() {
         if (methodCount > 1) {
-            $(".methods:last").remove();
+            $(".recipe_method:last").remove();
             methodCount -= 1;
         }
     });
