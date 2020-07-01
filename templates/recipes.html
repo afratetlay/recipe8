@@ -1,7 +1,12 @@
 {% extends "base.html" %} {% block content %}
+
+<!--- This is how the recipes will be presented on the recipe page -->
+
 <h4 class="site-heading-upper text-primary mb-3">نسخہ</h4>
 <h2>Recipes</h2>
-   
+
+<!--- Below is a card which will include the recipe image, name and description. At the bottom of the card will be a link which will take you to the recipe page with more information-->   
+
        <div class="row">
        {% for recipes in recipes %}
         <div class="col-md-5">
@@ -20,4 +25,5 @@
         </div>
         {% endfor %}
       </div>
+<!--- End card -->
 {% endblock %}
