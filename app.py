@@ -15,9 +15,15 @@ app.config["MONGO_URI"] = 'mongodb+srv://recipe8:Hellothere@myfirstcluster-ji6z9
 mongo = PyMongo(app)
 
 """ This is for the index page """
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
+
+
+""" This allows me to add new recipes to my website"""
+
 
 @app.route('/task', methods=['GET'])
 def task():
@@ -42,10 +48,13 @@ def insert_recipe():
         'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
 
+
         # Get List as my Ingredients and Methods are in an array in MongoDB 
+
 
         'ingredients': request.form.getlist('ingredients'),
         'recipe_method': request.form.getlist('recipe_method')})
+    print('hello',  request.form.getlist('ingredients'))
     return redirect(url_for('recipes'))
 
 @app.route('/recipes')

@@ -46,20 +46,17 @@
 
 <!--- This will allow users to write down how long it'll take them to cook the recipe -->
 
-        <div id="matfix" class="col 4">
-          <div class="row">
-            <div class="input-field col-md-4">
-              <i class="material-icons prefix">alarm</i>
-              <input
-                id="due_time"
-                name="due_time"
-                type="text"
-                class="timepicker"
-              />
-              <label for="autocomplete-input"></label>
-            </div>
-          </div>
-        </div>
+        <div class="input-field col-md-4">
+        <i class="material-icons prefix">alarm</i>
+        <input
+          placeholder="How long does it takes to cook"
+          name="due_time"
+          id="due_time"
+          type="text"
+          class="validate"
+        />
+        <label for="first_name">Time</label>
+      </div>
 
 <!--- End time -->
 
@@ -147,7 +144,7 @@
 <!--- This allows the users to write down the ingredients for their recipe -->
     
        <div class="row">
-        <div class="input-field col-md-12">
+        <div id="matfix" class="input-field col-md-12">
           <h5>Ingredients</h5>
           <input type="text" name="ingredients" class="ingredients">
           {% for i in ingredients %}
