@@ -143,44 +143,33 @@
 
 <!--- This allows the users to write down the ingredients for their recipe -->
     
-       <div class="row">
-        <div id="matfix" class="input-field col-md-12">
-          <h5>Ingredients</h5>
-          <input type="text" name="ingredients" class="ingredients">
-          {% for i in ingredients %}
-                        <input type="text" name="ingredients" class="ingredients" value="{{ i }}" required/> {% endfor %}
-          <div class="col text-center button-container">
-                            <button class="btn btn-secondary i-add" type="button">+</button>
-                            <button class="btn btn-secondary i-remove blue" type="button">-</button>
-                        </div>
+          <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="ingredients">Ingredients</label>
+                <textarea required class="form-control" id="ingredients" name="ingredients" rows="3"
+                    placeholder="Each ingredient in it's own line."></textarea>
+                <small class="form-text text-muted">Each ingredient in it's own line. No empty lines.</small>
+            </div>
         </div>
-      </div>
-
+    </div>
 <!--- End ingredients -->
 
 
 <!--- This allows the users to write the recipe method -->
 
-      <div class="row">
-        <div class="input-field col-md-12">
-          <h5>Recipe Method</h5>
-          <input type="text"name="recipe_method" class="recipe_method">
-         {% for m in recipe_method %}
-                            <input type="text" name="recipe_method" class="recipe_method" value=" {{ m }} " required/> {% endfor %}
-          <div class="col text-center button-container">
-                            <button class="btn btn-secondary m-add" type="button">+</button>
-                            <button class="btn btn-secondary m-remove blue" type="button">-</button>
-                        </div>
+      <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="recipe_method">Method</label>
+                <textarea required class="form-control" id="recipe_method" name="recipe_method" rows="3"
+                    placeholder="Each ingredient in it's own line."></textarea>
+                <small class="form-text text-muted text-danger">Each method in it's own line. No empty lines.</small>
+            </div>
         </div>
-      </div>
+    </div>
+
 <!--- End recipe method -->
-
-<!--- This allows the users to go back if they wish not to submit their recipe -->
-
-<div class="row">
- <button><a href= "{{url_for('recipes')}}" class="btn waves-effect waves-light">Go Back</a><button>
-
- <!--- end go back -->
 
  <!--- This allows the user to submit their finish recipe -->
 
