@@ -103,7 +103,9 @@ def view_recipe(recipe_id):
     recipe_db = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template("viewrecipe.html", recipe=recipe_db)
 
-
+@ app.route('/health')
+def health():
+    return render_template("health.html recipes=mongo.db.recipes.find())")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
