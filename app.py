@@ -47,14 +47,8 @@ def insert_recipe():
         'sugars': request.form.get('sugars'),
         'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
-
-
-        # Get List as my Ingredients and Methods are in an array in MongoDB 
-
-
-        'ingredients': request.form.getlist('ingredients'),
-        'recipe_method': request.form.getlist('recipe_method')})
-    print('hello',  request.form.getlist('ingredients'))
+        'ingredients': request.form.get('ingredients'),
+        'recipe_method': request.form.get('recipe_method')})
     return redirect(url_for('recipes'))
 
 @app.route('/recipes')
@@ -76,15 +70,15 @@ def update_recipe(recipes_id):
         'image_source': request.form.get('image_source'),
         'recipe_name': request.form.get('recipe_name'),
         'serves': request.form.get('serves'),
-        'time': request.form.get('due_time'),
+        'due_time': request.form.get('due_time'),
         'calories': request.form.get('calories'),
         'fat': request.form.get('fat'),
         'saturates': request.form.get('saturates'),
         'sugars': request.form.get('sugars'),
         'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
-        'ingredients': request.form.getlist('ingredients'),
-        'recipe_method': request.form.getlist('recipe_method')
+        'ingredients': request.form.get('ingredients'),
+        'recipe_method': request.form.get('recipe_method')
     })
     return redirect(url_for('recipes'))
 
