@@ -6,7 +6,6 @@
 
 body {
   font-family: '';
-  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("img/background.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -95,12 +94,15 @@ p {
 @media (min-width: 992px) {
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 0.9rem;
+    z-index: 9999;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
     color: rgba(255, 255, 255, 0.4);
+    z-index: 9999;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
     color: #e6a756;
+    z-index: 9999;
   }
 }
 
