@@ -38,6 +38,7 @@
           id="due_time"
           type="text"
           class="validate"
+          value="{{recipes.due_time}}"
         />
         <label for="first_name">Time</label>
       </div>
@@ -115,9 +116,9 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea required class="form-control" id="ingredients" name="ingredients" rows="3"
+                <textarea required class="form-control" id="ingredients" name="ingredients" value="{{recipes.ingredients}}" rows="3"
                     placeholder="Each ingredient in it's own line.">{{recipes.ingredients}}</textarea>
-                <small class="form-text text-muted">Each ingredient in it's own line. No empty lines.</small>
+                <small class="form-text text-muted">Please add a comma after each ingredient.</small>
             </div>
         </div>
     </div>
@@ -128,49 +129,21 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="recipe_method">Method</label>
-                <textarea required class="form-control" id="recipe_method" name="recipe_method" rows="3"
+                <textarea required class="form-control" value="{{recipes.recipe_method}}" id="recipe_method" name="recipe_method" rows="3"
                     placeholder="Each ingredient in it's own line.">{{recipes.recipe_method}}</textarea>
-                <small class="form-text text-muted">Each method in it's own line. No empty lines.</small>
+                <small class="form-text text-muted">Please add a comma after each ingredient.</small>
             </div>
         </div>
     </div>
 
-     
-
-      <!---<div class="row">
-        <div class="input-field col-md-12">
-          <i class="material-icons prefix">local_dining</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">Ingredients</label>
-        </div>
-      </div>
-  
-
-
-
-  <div class="input-field col-md-12">
-    <i class="material-icons prefix">library_books</i>
-   {% for m in recipes.recipe_method %}
-    <input type="text" name="methods" class="methods" value=" {{ m }} " required/> {% endfor %}
-    <label for="first_name">Recipe Method</label>
-  </div>
-  -->
- 
-<div class="row">
-  <button class="btn waves-effect waves-light" type="submit" name="action">
-    Submit
-    </button>
-  </div>
+    <div class="row">
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+        Submit
+        </button>
+    </div>
 </form>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
 
-due_time = Time.parse('{{recipes.due_time}}');
-$('#due_time').pickatime('picker').set('select', due_time, { format: 'HH:mm'}).trigger('change')
-});
-
-</script>
 {% endblock %}

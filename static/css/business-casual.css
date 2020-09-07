@@ -9,6 +9,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  background-color: #9d4e15;
 }
 
 h1,
@@ -80,6 +81,10 @@ p {
 
 #mainNav .navbar-brand {
   color: #e6a756;
+}
+
+.nav-wrapper {
+    background-color: #5a2d0c;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -255,11 +260,6 @@ p {
 .font-weight-light {
   font-weight: 100 !important;
 }
-
-
-
-  
- 
 
 .wrapper {
     text-align: center;

@@ -47,9 +47,9 @@
         {{ recipe.recipe_description}}
       </p>
       <h6><b>Ingredients</b></h6>
-     {% for instruction in recipe.ingredients %}
-      {{ instruction }}<br> 
-      {% endfor %}
+      <p>
+      {{recipe.ingredients}}
+      </p>
     </div>
   </div>
 </div>
@@ -60,9 +60,9 @@
   <div class="row">
     <div class="col-md-12">
       <h6><b>Method</b></h6>
-     {% for instruction in recipe.recipe_method  %}
-     <p>{{ instruction }}</p>
-   {% endfor %}
+     <p>
+      {{recipe.recipe_method}}
+      </p>
     </div>
   </div>
 </div>
