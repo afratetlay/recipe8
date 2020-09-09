@@ -47,8 +47,8 @@ def insert_recipe():
         'sugars': request.form.get('sugars'),
         'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
-        'ingredients': request.form.getlist('ingredients'),
-        'recipe_method': request.form.getlist('recipe_method')})
+        'ingredients': request.form.get('ingredients'),
+        'recipe_method': request.form.get('recipe_method')})
     return redirect(url_for('recipes'))
 
 @app.route('/recipes')
@@ -77,8 +77,8 @@ def update_recipe(recipes_id):
         'sugars': request.form.get('sugars'),
         'salt': request.form.get('salt'),
         'recipe_description': request.form.get('recipe_description'),
-        'ingredients': request.form.getlist('ingredients'),
-        'recipe_method': request.form.getlist('recipe_method')
+        'ingredients': request.form.get('ingredients'),
+        'recipe_method': request.form.get('recipe_method')
     })
     return redirect(url_for('recipes'))
 
